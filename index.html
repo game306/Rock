@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>ROCK - Game Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #2b5876, #4e4376);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+      color: #fff;
+      padding: 20px;
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .result-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+    .game-title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .result {
+      font-size: 26px;
+      color: #00ff99;
+      margin-top: 5px;
+    }
+    .input-wrap {
+      margin-top: 10px;
+    }
+    input[type='text'] {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      width: 60%;
+    }
+    button {
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: #00c8ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0099cc;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background: #128c7e;
+    }
+  </style>
+</head>
+<body>
+  <h1>ROCK - Game Results</h1>
+
+  <!-- FARIDABAD -->
+  <div class="result-box">
+    <div class="game-title">FARIDABAD (FB)</div>
+    <div class="result" id="fb">---</div>
+    <div class="input-wrap">
+      <input type="text" id="fb-input" placeholder="Enter result" />
+      <button onclick="updateResult('fb')">Update</button>
+    </div>
+  </div>
+
+  <!-- GAZIABAD -->
+  <div class="result-box">
+    <div class="game-title">GAZIABAD (GB)</div>
+    <div class="result" id="gb">---</div>
+    <div class="input-wrap">
+      <input type="text" id="gb-input" placeholder="Enter result" />
+      <button onclick="updateResult('gb')">Update</button>
+    </div>
+  </div>
+
+  <!-- GALI -->
+  <div class="result-box">
+    <div class="game-title">GALI (GL)</div>
+    <div class="result" id="gl">---</div>
+    <div class="input-wrap">
+      <input type="text" id="gl-input" placeholder="Enter result" />
+      <button onclick="updateResult('gl')">Update</button>
+    </div>
+  </div>
+
+  <!-- DISAWAR -->
+  <div class="result-box">
+    <div class="game-title">DISAWAR (DS)</div>
+    <div class="result" id="ds">---</div>
+    <div class="input-wrap">
+      <input type="text" id="ds-input" placeholder="Enter result" />
+      <button onclick="updateResult('ds')">Update</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>गेम खेलने के लिए यहां क्लिक करे</p>
+    <a class="whatsapp-btn" href="https://wa.me/917015944012" target="_blank"
+      >+91 70159 44012 पर WhatsApp करें</a
+    >
+  </div>
+
+  <script>
+    function updateResult(gameId) {
+      const input = document.getElementById(`${gameId}-input`).value.trim();
+      document.getElementById(gameId).textContent = input || '---';
+    }
+  </script>
+</body>
+</html>
